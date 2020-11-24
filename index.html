@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="style.css">
       </head>
       <body>
-      
+      <!-- navbar starts -->
       <div id="navbar">
         <a href="#default" id="logo">CompanyLogo</a>
         <div id="navbar-right">
@@ -21,52 +21,69 @@
           <a  class="active" href="index.html">Trial</a>
         </div>
       </div>
-      
+      <!-- navbar ends -->
 
+      <!-- main content start -->
       <div style="margin-top:100px;padding:15px 15px 5px">
         <div class="heading d-flex justify-content-center">
-          <h1 style="font-size: 60px; font-family: 'Times New Roman', Times, serif;" class="font-darkblue my-4 mx-3 text-center">HEADING</h1>
+          <h1 style="font-size: 60px; font-family: 'Times New Roman', Times, serif;" class="font-darkblue my-1 mx-1 text-center">HEADING</h1>
         </div>
         <div class="container-fluid">
         <div class="row">
-          <div class="col-6 py-3" style="height: 550px;">
+          <div class="col-6 " style="height: 550px;">
             <div class="container-fluid p-5">
               <h3 class="font-darkblue my-4 mx-3 text-center" style="font-family: 'Times New Roman', Times, serif;"> Enter Your Symptoms accordingly</h3>
               <form name="form1" id="form1" action="/action_page.php" style="font-family: 'Times New Roman', Times, serif;" class="pl-5">
 
-                <h5 class="p-3">Do You Have Fever: <select style="background-color: #a8fddf;" name="subject" id="subject">
+                <h5 class="p-3">Do You Have Fever: <select style="background-color: #a8fddf;" name="fever" id="fever">
                     <option value="">Yes</option>
                     <option value="">No</option>
                 </select></h5>
-                
-               <h5 class="p-3"> Do You Have Cough: <select style="background-color: #a8fddf;" name="topic" id="topic">
+               <h5 class="p-3"> Do You Have Cough: <select style="background-color: #a8fddf;" name="cough" id="cough">
                 <option value="">Yes</option>
                 <option value="">No</option>
                 </select></h5>
-                
-                <h5 class="p-3">Do You Have Pain In Your Head: <select style="background-color: #a8fddf;" name="chapter" id="chapter">
+                <h5 class="p-3">Do You Have Pain In Your Head: <select style="background-color: #a8fddf;" name="headache" id="headache">
                   <option value="">Yes</option>
                   <option value="">No</option>
                 </select>
                 </h5>
-
-                <h5 class="p-3">Do You feel blockage in breathing: <select style="background-color: #a8fddf;" name="chapter" id="chapter">
+                <h5 class="p-3">Do You feel tired all the time: <select style="background-color: #a8fddf;" name="weakness" id="weakness"> 
                   <option value="">Yes</option>
                   <option value="">No</option>
                 </select>
                 </h5>
-
-                <h5 class="p-3">Do You feel tired all the time: <select style="background-color: #a8fddf;" name="chapter" id="chapter"> 
+                <h5 class="p-3">Do you have runny nose or sneezing frequently: <select style="background-color: #a8fddf;" name="sneezing" id="sneezing">
+                  <option value="">Yes</option>
+                  <option value="">No</option>
+                </select>
+                </h5>
+                <h5 class="p-3">Do You experience pain in your stomatch: <select style="background-color: #a8fddf;" name="stomatchache" id="stomatchache">
+                  <option value="">Yes</option>
+                  <option value="">No</option>
+                </select>
+                </h5>
+                <h5 class="p-3">Do You feel blockage in breathing: <select style="background-color: #a8fddf;" name="breathing" id="breathing">
+                  <option value="">Yes</option>
+                  <option value="">No</option>
+                </select>
+                </h5>
+                <h5 class="p-3">Do You feel itching all over your body: <select style="background-color: #a8fddf;" name="body_iching" id="body_iching">
+                  <option value="">Yes</option>
+                  <option value="">No</option>
+                </select>
+                </h5>
+                <h5 class="p-3">Do You feel itching in area near your eyes: <select style="background-color: #a8fddf;" name="eye_iching" id="eye_iching">
+                  <option value="">Yes</option>
+                  <option value="">No</option>
+                </select>
+                </h5>
+                <h5 class="p-3">Do you feel like you have to vomit: <select style="background-color: #a8fddf;" name="vomit" id="vomit">
                   <option value="">Yes</option>
                   <option value="">No</option>
                 </select>
                 </h5>
               </form>
-              
-              <!-- <div class="heading d-flex justify-content-center">
-                <h3 style="font-size: 50px; font-family: 'Times New Roman', Times, serif;" class="font-darkblue my-4 mx-3 text-center"> Enter another symptoms</h3></div> -->
-
-
                 <h3 class="font-darkblue my-4 mx-3 text-center" style="font-family: 'Times New Roman', Times, serif;"> Enter Your Symptoms accordingly</h3>
                 <div class="input pl-5 pr-5" style="font-family: 'Times New Roman', Times, serif;">
                   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
@@ -74,27 +91,15 @@
                   <div class="d-flex justify-content-center">
                     <button type="button" class="btn btn-secondary rounded my-4 mx-3" style="background-color: #a8fddf; color: black;"><h6>Submit Symptoms</h6></button>
                     </div>
-
-
             </div>
           </div>
-          <div class="col-6 d-flex justify-content-center p-4">
+          <div class="col-6 d-flex justify-content-center" style="padding-top: 10vh;">
             <img src="images/d.png" alt="" height="700px">
           </div>
         </div>
-      <!-- <div class="heading d-flex justify-content-center">
-        <h2 style="font-size: 50px; font-family: 'Times New Roman', Times, serif;" class="font-darkblue my-4 mx-3 text-center"> Enter another symptoms</h2></div>
-        <div class="input pl-5 pr-5" style="font-family: 'Times New Roman', Times, serif;">
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          </div>
-          <div class="d-flex justify-content-center">
-            <button type="button" class="btn btn-secondary rounded my-4 mx-3" style="background-color: #a8fddf; color: black;"><h6>Submit Symptoms</h6></button>
-            </div> -->
-
      </div>
     </div>
-      
-      
+      <!-- main content ends -->
 
 
     <!-- Optional JavaScript; choose one of the two! -->
