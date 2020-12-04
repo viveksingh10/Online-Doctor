@@ -36,51 +36,51 @@
               <form name="form1" id="form1" action="/action_page.php" style="font-family: 'Times New Roman', Times, serif;" class="pl-5">
 
                 <h5 class="p-3">Do You Have Fever: <select style="background-color: #a8fddf;" name="fever" id="fever">
-                    <option value="">Yes</option>
-                    <option value="">No</option>
+                    <option value="">Y</option>
+                    <option value="">N</option>
                 </select></h5>
                <h5 class="p-3"> Do You Have Cough: <select style="background-color: #a8fddf;" name="cough" id="cough">
-                <option value="">Yes</option>
-                <option value="">No</option>
+                <option value="">Y</option>
+                <option value="">N</option>
                 </select></h5>
                 <h5 class="p-3">Do You Have Pain In Your Head: <select style="background-color: #a8fddf;" name="headache" id="headache">
-                  <option value="">Yes</option>
-                  <option value="">No</option>
+                  <option value="">Y</option>
+                  <option value="">N</option>
                 </select>
                 </h5>
                 <h5 class="p-3">Do You feel tired all the time: <select style="background-color: #a8fddf;" name="weakness" id="weakness"> 
-                  <option value="">Yes</option>
-                  <option value="">No</option>
+                  <option value="">Y</option>
+                  <option value="">N</option>
                 </select>
                 </h5>
                 <h5 class="p-3">Do you have runny nose or sneezing frequently: <select style="background-color: #a8fddf;" name="sneezing" id="sneezing">
-                  <option value="">Yes</option>
-                  <option value="">No</option>
+                  <option value="">Y</option>
+                  <option value="">N</option>
                 </select>
                 </h5>
                 <h5 class="p-3">Do You experience pain in your stomatch: <select style="background-color: #a8fddf;" name="stomatchache" id="stomatchache">
-                  <option value="">Yes</option>
-                  <option value="">No</option>
+                  <option value="">Y</option>
+                  <option value="">N</option>
                 </select>
                 </h5>
                 <h5 class="p-3">Do You feel blockage in breathing: <select style="background-color: #a8fddf;" name="breathing" id="breathing">
-                  <option value="">Yes</option>
-                  <option value="">No</option>
+                  <option value="">Y</option>
+                  <option value="">N</option>
                 </select>
                 </h5>
                 <h5 class="p-3">Do You feel itching all over your body: <select style="background-color: #a8fddf;" name="body_iching" id="body_iching">
-                  <option value="">Yes</option>
-                  <option value="">No</option>
+                  <option value="">Y</option>
+                  <option value="">N</option>
                 </select>
                 </h5>
                 <h5 class="p-3">Do You feel itching in area near your eyes: <select style="background-color: #a8fddf;" name="eye_iching" id="eye_iching">
-                  <option value="">Yes</option>
-                  <option value="">No</option>
+                  <option value="">Y</option>
+                  <option value="">N</option>
                 </select>
                 </h5>
                 <h5 class="p-3">Do you feel like you have to vomit: <select style="background-color: #a8fddf;" name="vomit" id="vomit">
-                  <option value="">Yes</option>
-                  <option value="">No</option>
+                  <option value="">Y</option>
+                  <option value="">N</option>
                 </select>
                 </h5>
               </form>
@@ -89,7 +89,7 @@
                   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                   </div>
                   <div class="d-flex justify-content-center">
-                    <button type="button" class="btn btn-secondary rounded my-4 mx-3" style="background-color: #a8fddf; color: black;"><h6>Submit Symptoms</h6></button>
+                    <button type="button" onclick="solution()" class="btn btn-secondary rounded my-4 mx-3" style="background-color: #a8fddf; color: black;"><h6>Submit Symptoms</h6></button>
                     </div>
             </div>
           </div>
@@ -101,7 +101,25 @@
     </div>
       <!-- main content ends -->
 
-
+<script>
+ 
+  function solution(){
+  const sqlite3 = require('sqlite3').verbose();
+  let db = new sqlite3.Database('./onlinedoctordb')
+  DispWin = window.open('','NewWin', 'toolbar=no,status=no,width=300,height=200')
+  let sql = 'select disease, remedies from symptoms where fever = ? ';
+   var a = document.getElementsById( 'fever' ).value.toString();
+  db.get(sql,[a], (err,row) => {
+   if(err){
+        DispWin.document.write(err.message);
+    }
+    return row 
+      ? DispWin.document.write(row.disease,'is your disease and remedies for it are : '  ,row.remedies)
+      : DispWin.document.wirte('nothing found');
+  
+});
+  }
+</script>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
