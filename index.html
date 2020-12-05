@@ -36,12 +36,12 @@
               <form name="form1" id="form1" action="/action_page.php" style="font-family: 'Times New Roman', Times, serif;" class="pl-5">
 
                 <h5 class="p-3">Do You Have Fever: <select style="background-color: #a8fddf;" name="fever" id="fever">
-                    <option value="">Y</option>
-                    <option value="">N</option>
+                    <option value="Y">Y</option>
+                    <option value="N">N</option>
                 </select></h5>
                <h5 class="p-3"> Do You Have Cough: <select style="background-color: #a8fddf;" name="cough" id="cough">
-                <option value="">Y</option>
-                <option value="">N</option>
+                <option value="Y">Y</option>
+                <option value="N">N</option>
                 </select></h5>
                 <h5 class="p-3">Do You Have Pain In Your Head: <select style="background-color: #a8fddf;" name="headache" id="headache">
                   <option value="">Y</option>
@@ -89,7 +89,7 @@
                   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                   </div>
                   <div class="d-flex justify-content-center">
-                    <button type="button" onclick="solution()" class="btn btn-secondary rounded my-4 mx-3" style="background-color: #a8fddf; color: black;"><h6>Submit Symptoms</h6></button>
+                    <button type="button" onclick="submit()" class="btn btn-secondary rounded my-4 mx-3" style="background-color: #a8fddf; color: black;"><h6>Submit Symptoms</h6></button>
                     </div>
             </div>
           </div>
@@ -102,23 +102,22 @@
       <!-- main content ends -->
 
 <script>
- 
-  function solution(){
-  const sqlite3 = require('sqlite3').verbose();
-  let db = new sqlite3.Database('./onlinedoctordb')
-  DispWin = window.open('','NewWin', 'toolbar=no,status=no,width=300,height=200')
-  let sql = 'select disease, remedies from symptoms where fever = ? ';
-   var a = document.getElementsById( 'fever' ).value.toString();
-  db.get(sql,[a], (err,row) => {
-   if(err){
-        DispWin.document.write(err.message);
-    }
-    return row 
-      ? DispWin.document.write(row.disease,'is your disease and remedies for it are : '  ,row.remedies)
-      : DispWin.document.wirte('nothing found');
-  
-});
-  }
+ function submit(){
+  var a= (fever.options[fever.selectedIndex].text);
+  var b= (cough.options[cough.selectedIndex].text); 
+  var c= (headache.options[cough.selectedIndex].text);
+  var d= (weekness.options[cough.selectedIndex].text);
+  var e= (sneezing.options[cough.selectedIndex].text);
+  var f= (stomachache.options[cough.selectedIndex].text);
+  var g= (brething.options[cough.selectedIndex].text);
+  var h= (body_iching.options[cough.selectedIndex].text);
+  var i= (eye_iching.options[cough.selectedIndex].text);
+  var j= (vomit.options[cough.selectedIndex].text);
+
+  var message = connection.solution(a,b,c,d,e,f,g,h,i,j);
+  alert(message);
+ }
+
 </script>
     <!-- Optional JavaScript; choose one of the two! -->
 
