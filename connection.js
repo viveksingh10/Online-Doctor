@@ -11,6 +11,7 @@ if(err){
     }
      message = `${row.disease} and remdies for it are ${row.remedies}`
 });
+console.log(message)
 return message
 
 }
